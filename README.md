@@ -1,6 +1,6 @@
 # My Dotfiles
-These are my dotfile configuration files for different software in Bash.
+The directory contains a .gitignore file that tells Git to ignore the linuxsetup.log file that we will create later. We also create a Makefile that runs the linux.sh script and the cleanup.sh script, with the cleanup script running first. Then this README.md file is also in this directory.
 ## .vimrc
-This is my custom .vimrc configuration for Vim.
+Inside the .dotfiles directory, there is an bin directory that contains a linux.sh script. This runs using bash. First, it checks to make sure the operating system is Linux, if not an error message is outputted to a linuxsetup.log file and the program exits. A .TRASH directory is created. If a .vimrc file already exists in the home directory, it's name is changed to '.bupvimrc' and this process is recorded in the linuxsetup.log. Then the contents of a vimrc file that exists in an etc directory inside of the .dotfiles directory, are overwritten to a .vimrc file in your home directory. The etc/vimrc file contains configurations, that set syntax, number, autoindent, ruler, color and tab. Then a statement is added to the end of a .bashrc file, that says 'source ~/.dotfiles/etc/bashrc(underscore)custom'. Still inside of the bin directory, we create a cleanup.sh file that runs with bash and removes the .vimrc file in the home directory and also removes the statement we added to the end of the .bashrc file. Then the .TRASH directory is removed as well.  
 ## .bashrc
-This is my custom .bashrc configuraction for Bash. 
+Inside of the .dotfiles directory, we also create a 'etc' directory that houses the vimrc file discussed earlier. It also contains a file called bashrc(underscore)custom that sets up environment variables, aliases, and functions that look for key options and commands and create shortcuts for certain commands. 
